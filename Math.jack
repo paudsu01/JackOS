@@ -133,4 +133,9 @@ class Math {
 	}
 	return value;
     }
+
+    function Array getTwoToThePowersArray(){
+	return twoToTheIndexValue;
+    }
+
 }
