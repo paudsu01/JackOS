@@ -44,31 +44,44 @@ class Math {
 	return sum;
     }
 
+   // equivalent of x % y
+    function int remainder(int x, int y) {
+	var int quotient;
+	let quotient = Math.divide(x, y);	
+	return (x - (y * quotient));
+    }
 
-    function int divide(int x, int y) {
-	var int quotient, ret_value, abs_x, abs_y;
+    function int positive_divide(int x, int y) {
+	var int quotient, ret_value;
 	if (y = 0){
 		do Sys.error(3);
 	}
 
-	let abs_x = Math.abs(x);
-	let abs_y = Math.abs(y);
-
-	if (abs_y > abs_x) {
+	if ((y > x) | (y < 0)) {
 		let ret_value = 0;
 	} else {
-		let quotient = Math.divide(abs_x, abs_y + abs_y); 
+		let quotient = Math.divide(x, y + y); 
 		let quotient = quotient + quotient;
-		if ((abs_x - (quotient * abs_y)) < abs_y){
+		if ((x - (quotient * y)) < y){
 			let ret_value = quotient;
 		} else {
 			let ret_value = quotient + 1;
 		}
-		
-		if (x < 0) {let ret_value = - ret_value;}
-		if (y < 0) {let ret_value = - ret_value;}
 	}
 	
+	return ret_value;
+    }
+
+    function int divide(int x, int y) {
+	var int abs_x, abs_y, ret_value;
+
+	let abs_x = Math.abs(x);
+	let abs_y = Math.abs(y);
+	let ret_value = Math.positive_divide(abs_x, abs_y);
+
+	if (x < 0) {let ret_value = - ret_value;}
+	if (y < 0) {let ret_value = - ret_value;}
+
 	return ret_value;
     }
 
