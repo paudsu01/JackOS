@@ -49,11 +49,6 @@ class Memory {
 	var int ret_address;
 	if (Memory.peek(current_node) > (size + 1)){
 		let ret_address = current_node;
-		do Output.println();
-		do Output.printInt(current_node);
-		do Output.println();
-		do Output.printInt(Memory.peek(current_node));
-		do Output.println();
 	}
 	else {
 		if (Memory.peek(current_node+1) = 0) {
@@ -62,13 +57,9 @@ class Memory {
 
 		} else {
 			// go to next node
-			do Output.printInt(current_node);
-			do Output.println();
 			let ret_address = Memory.get_free_node(Memory.peek(current_node+1), size);
 		}
 	}
-	do Output.printInt(2049);
-	do Output.println();
 	return ret_address;
      }
 
