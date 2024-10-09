@@ -60,7 +60,7 @@ class Math {
 	if ((y > x) | (y < 0)) {
 		let ret_value = 0;
 	} else {
-		let quotient = Math.divide(x, y + y); 
+		let quotient = Math.positive_divide(x, y + y); 
 		let quotient = quotient + quotient;
 		if ((x - (quotient * y)) < y){
 			let ret_value = quotient;
